@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Resources Hub</title>
+    <style>
+        :root {
+            /* Apple-inspired color scheme with lower saturation */
+            --primary-blue: #6699CC;
+            --secondary-blue: #8AB8D8;
+            --primary-green: #7FB992;
+            --primary-indigo: #9797C9;
+            --primary-orange: #D9A97E;
+            --primary-pink: #D08A9F;
+            --primary-purple: #B7A4C7;
+            --primary-red: #C9937A;
+            --primary-teal: #83B6C4;
+            --primary-yellow: #D8C886;
+            --light-background: #F5F5F7;
+            --light-gray: #E8E8ED;
+            --medium-gray: #CDCDCF;
+            --dark-gray: #666666;
+            --background-dark: #2C2C2E;
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-purple));
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--text-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            padding: 1rem;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+        }
+
+        .card-header.research {
+            background-color: var(--primary-purple);
+        }
+
+        .card-header.tools {
+            background-color: var(--primary-green);
+        }
+
+        .card-header.competitors {
+            background-color: var(--primary-orange);
+        }
+
+        .card-header.templates {
+            background-color: var(--primary-red);
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            color: #555555;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .card-link:hover {
+            color: var(--secondary-blue);
+        }
+
+        footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1.5rem 1rem;
+            }
+
+            .section {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .search-bar {
+            display: flex;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: var(--primary-blue);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Design Resources Hub<br><span style="font-weight: 300; font-size: 0.85em;">网页设计资源导航</span></h1>
+        <p class="subtitle">Navigation Site Development Related Resources<br>导航站开发相关资源</p>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search resources... 搜索资源...">
+            <button>Search 搜索</button>
+        </div>
+
+        <!-- Section 1: Research & Keywords -->
+        <div class="section">
+            <h2 class="section-title">Research & Keyword Analysis<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">研究和关键词分析</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">Google Keyword Planner</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A powerful tool from Google that helps you discover new keywords and see estimates of the searches they receive and the cost to target them.<br><span style="color: #555555; font-size: 0.95em;">谷歌提供的强大工具，帮助您发现新的关键词，并查看这些关键词的搜索量和定向成本估算。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">SEMrush</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">All-in-one marketing toolkit for digital marketing professionals to analyze competitors, research keywords, and audit website performance.<br><span style="color: #555555; font-size: 0.95em;">数字营销专业人员的一体化营销工具包，用于分析竞争对手、研究关键词并审核网站性能。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">Ahrefs</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">SEO platform that helps with site audits, competitor analysis, and identifying top-performing content in your niche.<br><span style="color: var(--dark-gray); font-size: 0.95em;">SEO平台，帮助进行网站审核、竞争对手分析，并识别您所在领域中表现最佳的内容。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">Ubersuggest</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Free keyword suggestion tool that generates hundreds of keyword ideas from a single term, phrase, or URL.<br><span style="color: var(--dark-gray); font-size: 0.95em;">免费的关键词建议工具，可从单个术语、短语或URL生成数百个关键词创意。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Essential Tools -->
+        <div class="section">
+            <h2 class="section-title">Essential Design Tools<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">必备设计工具</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Figma</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A collaborative interface design tool that makes designing and prototyping accessible to entire product teams.<br><span style="color: var(--dark-gray); font-size: 0.95em;">协作界面设计工具，使设计和原型设计对整个产品团队都变得更加便捷。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Adobe XD</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Design, prototype, and share user experiences for websites and mobile apps with this powerful UI/UX design platform.<br><span style="color: var(--dark-gray); font-size: 0.95em;">使用这个强大的UI/UX设计平台设计、原型化和分享网站和移动应用的用户体验。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Google Analytics</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Tracks and reports website traffic, user behavior, and conversion metrics to help optimize your site performance.<br><span style="color: var(--dark-gray); font-size: 0.95em;">跟踪和报告网站流量、用户行为和转化指标，帮助优化您的网站性能。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Visual Studio Code</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A lightweight but powerful source code editor with built-in Git commands, syntax highlighting, and intelligent code completion.<br><span style="color: var(--dark-gray); font-size: 0.95em;">轻量级但功能强大的源代码编辑器，具有内置的Git命令、语法高亮和智能代码补全功能。</span></p>
+                        <a href="#" class="card-link">Visit Tool 访问工具 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Competitor Research -->
+        <div class="section">
+            <h2 class="section-title">Competitor Analysis Platforms<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">竞品分析平台</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">SimilarWeb</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Provides detailed website traffic statistics, audience insights, and competitive analysis to understand market trends.<br><span style="color: var(--dark-gray); font-size: 0.95em;">提供详细的网站流量统计、受众洞察和竞争分析，以了解市场趋势。</span></p>
+                        <a href="#" class="card-link">Visit Platform 访问平台 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">SpyFu</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Uncovers competitors' most profitable keywords and ads for paid and organic search, revealing their online marketing strategy.<br><span style="color: var(--dark-gray); font-size: 0.95em;">揭示竞争对手在付费和自然搜索中最有利可图的关键词和广告，展现他们的在线营销策略。</span></p>
+                        <a href="#" class="card-link">Visit Platform 访问平台 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">Moz</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">All-in-one SEO toolset to rank higher, drive traffic, and analyze competitors' strategies to stay ahead in search results.<br><span style="color: var(--dark-gray); font-size: 0.95em;">一体化SEO工具集，帮助提高排名、增加流量，并分析竞争对手的策略，在搜索结果中保持领先。</span></p>
+                        <a href="#" class="card-link">Visit Platform 访问平台 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">BuzzSumo</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Discover what content performs best for any topic or competitor, helping you create high-performing content strategies.<br><span style="color: var(--dark-gray); font-size: 0.95em;">发现任何主题或竞争对手中表现最佳的内容，帮助您创建高性能的内容策略。</span></p>
+                        <a href="#" class="card-link">Visit Platform 访问平台 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Open Source Templates -->
+        <div class="section">
+            <h2 class="section-title">Open Source Templates & Resources<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">开源模板和资源</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">GitHub</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Find thousands of open-source website templates, component libraries, and front-end frameworks for your next project.<br><span style="color: var(--dark-gray); font-size: 0.95em;">为您的下一个项目寻找数千个开源网站模板、组件库和前端框架。</span></p>
+                        <a href="#" class="card-link">Explore Templates 浏览模板 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Bootstrap</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">The world's most popular front-end component library for building responsive, mobile-first websites rapidly and effectively.<br><span style="color: var(--dark-gray); font-size: 0.95em;">世界上最受欢迎的前端组件库，用于快速有效地构建响应式、移动优先的网站。</span></p>
+                        <a href="#" class="card-link">Visit Website 访问网站 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Tailwind CSS</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.<br><span style="color: var(--dark-gray); font-size: 0.95em;">实用优先的CSS框架，包含可直接在标记中组合使用的类，用于构建任何设计。</span></p>
+                        <a href="#" class="card-link">Visit Website 访问网站 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">CodePen</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">An online community for testing and showcasing user-created HTML, CSS, and JavaScript code snippets and templates.<br><span style="color: var(--dark-gray); font-size: 0.95em;">在线社区，用于测试和展示用户创建的HTML、CSS和JavaScript代码片段和模板。</span></p>
+                        <a href="#" class="card-link">Explore Resources 浏览资源 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Behance</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">The leading platform to find design inspiration, showcase creative work, and discover the latest trends in web design.<br><span style="color: var(--dark-gray); font-size: 0.95em;">寻找设计灵感、展示创意作品和发现网页设计最新趋势的领先平台。</span></p>
+                        <a href="#" class="card-link">Visit Platform 访问平台 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Dribbble</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A self-promotion and social networking platform for digital designers to share their creative work and find inspiration.<br><span style="color: var(--dark-gray); font-size: 0.95em;">数字设计师的自我推广和社交网络平台，用于分享他们的创意作品并寻找灵感。</span></p>
+                        <a href="#" class="card-link">Visit Platform 访问平台 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Web Design Resources Hub | All resources carefully curated for professional web designers</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple search functionality
+            const searchInput = document.querySelector('.search-bar input');
+            const searchButton = document.querySelector('.search-bar button');
+            const cards = document.querySelectorAll('.card');
+            
+            const performSearch = () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    const description = card.querySelector('.card-description').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
+            
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
