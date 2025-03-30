@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Resources Hub</title>
+    <style>
+        :root {
+            /* Apple-inspired color scheme with lower saturation */
+            --primary-blue: #6699CC;
+            --secondary-blue: #8AB8D8;
+            --primary-green: #7FB992;
+            --primary-indigo: #9797C9;
+            --primary-orange: #D9A97E;
+            --primary-pink: #D08A9F;
+            --primary-purple: #B7A4C7;
+            --primary-red: #C9937A;
+            --primary-teal: #83B6C4;
+            --primary-yellow: #D8C886;
+            /* 添加按钮对比色 */
+            --button-research: #D08A9F;    /* 粉色按钮对比紫色卡片 */
+            --button-tools: #D9A97E;       /* 橙色按钮对比绿色卡片 */
+            --button-competitors: #7FB992;  /* 绿色按钮对比橙色卡片 */
+            --button-templates: #83B6C4;    /* 蓝色按钮对比红色卡片 */
+            --light-background: #F5F5F7;
+            --light-gray: #E8E8ED;
+            --medium-gray: #CDCDCF;
+            --dark-gray: #666666;
+            --background-dark: #2C2C2E;
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-purple));
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--text-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            padding: 1rem;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+        }
+
+        .card-header.research {
+            background-color: var(--primary-purple);
+        }
+
+        .card-header.tools {
+            background-color: var(--primary-green);
+        }
+
+        .card-header.competitors {
+            background-color: var(--primary-orange);
+        }
+
+        .card-header.templates {
+            background-color: var(--primary-red);
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            color: #555555;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .card-link:hover {
+            color: var(--secondary-blue);
+        }
+
+        footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 1.5rem 1rem;
+            }
+
+            .section {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .search-bar {
+            display: flex;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: var(--primary-blue);
+            opacity: 0.9;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .button {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            opacity: 0.9;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 为不同类型的卡片设置不同的按钮颜色 */
+        .card-header.research + .card-body .button {
+            background-color: var(--button-research);
+        }
+        
+        .card-header.tools + .card-body .button {
+            background-color: var(--button-tools);
+        }
+        
+        .card-header.competitors + .card-body .button {
+            background-color: var(--button-competitors);
+        }
+        
+        .card-header.templates + .card-body .button {
+            background-color: var(--button-templates);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Design Resources Hub<br><span style="font-weight: 300; font-size: 0.85em;">网页设计资源导航</span></h1>
+        <p class="subtitle">Navigation Site Development Related Resources<br>导航站开发相关资源</p>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search resources... 搜索资源...">
+            <button>Search 搜索</button>
+        </div>
+
+        <!-- Section 1: Research & Keywords -->
+        <div class="section">
+            <h2 class="section-title">Research & Keyword Analysis<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">研究和关键词分析</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">Google Keyword Planner</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A powerful tool from Google that helps you discover new keywords and see estimates of the searches they receive and the cost to target them.<br><span style="color: #555555; font-size: 0.95em;">谷歌提供的强大工具，帮助您发现新的关键词，并查看这些关键词的搜索量和定向成本估算。</span></p>
+                        <div class="button-group">
+                            <a href="https://www.searchsuggest.tips/?keyword=" class="card-link button">SearchSuggest →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">Toolify</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">All-in-one marketing toolkit for digital marketing professionals to analyze competitors, research keywords, and audit website performance.<br><span style="color: #555555; font-size: 0.95em;">数字营销专业人员的一体化营销工具包，用于分析竞争对手、研究关键词并审核网站性能。</span></p>
+                        <div class="button-group">
+                            <a href="https://www.toolify.ai/Best-AI-Tools-revenue" class="card-link button">Toolify →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">AI Tool Requests</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">SEO platform that helps with site audits, competitor analysis, and identifying top-performing content in your niche.<br><span style="color: var(--dark-gray); font-size: 0.95em;">SEO平台，帮助进行网站审核、竞争对手分析，并识别您所在领域中表现最佳的内容。</span></p>
+                        <div class="button-group">
+                            <a href="https://theresanaiforthat.com/requests" class="card-link button">AIforThat →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header research">
+                        <h3 class="card-title">Keyword Difficulty</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Free keyword suggestions tool that provides search volume data and content ideas.<br><span style="color: var(--dark-gray); font-size: 0.95em;">免费的关键词建议工具，提供搜索量数据和内容创意。</span></p>
+                        <div class="button-group">
+                            <a href="https://ahrefs.com/keyword-difficulty" class="card-link button">Ahrefs →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Domain & Hosting -->
+        <div class="section">
+            <h2 class="section-title">Domain & Hosting Services<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">域名和托管服务</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Domain Search</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Search for available domain names across multiple registrars.<br><span style="color: var(--dark-gray); font-size: 0.95em;">在多个注册商中搜索可用的域名。</span></p>
+                        <div class="button-group">
+                            <a href="https://leandomainsearch.com" class="card-link button">LeanDomain →</a>
+                            <a href="https://query.domains" class="card-link button">QueryDomains →</a>
+                            <a href="https://instantdomainsearch.com" class="card-link button">InstantDomain →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Domain Registration</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Register your domain names with trusted registrars.<br><span style="color: var(--dark-gray); font-size: 0.95em;">使用可信赖的注册商注册您的域名。</span></p>
+                        <div class="button-group">
+                            <a href="https://spaceship.com" class="card-link button">Spaceship →</a>
+                            <a href="https://porkbun.com" class="card-link button">Porkbun →</a>
+                            <a href="https://namecheap.com" class="card-link button">Namecheap →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Code & Site Management</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Platforms for code hosting and website deployment.<br><span style="color: var(--dark-gray); font-size: 0.95em;">代码托管和网站部署平台。</span></p>
+                        <div class="button-group">
+                            <a href="https://github.com" class="card-link button">GitHub →</a>
+                            <a href="https://cloudflare.com" class="card-link button">Cloudflare →</a>
+                            <a href="https://vercel.com" class="card-link button">Vercel →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header tools">
+                        <h3 class="card-title">Analytics & Search Console</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Tools for monitoring website traffic and search performance.<br><span style="color: var(--dark-gray); font-size: 0.95em;">监控网站流量和搜索性能的工具。</span></p>
+                        <div class="button-group">
+                            <a href="https://search.google.com/search-console" class="card-link button">Search Console →</a>
+                            <a href="https://analytics.google.com" class="card-link button">Analytics →</a>
+                            <a href="https://www.bing.com/webmasters/submiturl" class="card-link button">Bing →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Competitor Research -->
+        <div class="section">
+            <h2 class="section-title">Competitor Research Tools<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">竞品调研工具</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">Traffic Analysis</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Check website traffic and keywords.<br><span style="color: var(--dark-gray); font-size: 0.95em;">查看流量和网页关键词</span></p>
+                        <div class="button-group">
+                            <a href="https://aitdk.com" class="card-link button">AITDK →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">Backlink Analysis</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Analyze website backlinks and SEO metrics.<br><span style="color: var(--dark-gray); font-size: 0.95em;">查看外链和SEO指标</span></p>
+                        <div class="button-group">
+                            <a href="https://ahrefs.com/free-seo-tools" class="card-link button">Ahrefs →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header competitors">
+                        <h3 class="card-title">Keyword Research</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Research keywords and content strategies.<br><span style="color: var(--dark-gray); font-size: 0.95em;">研究关键词和内容策略</span></p>
+                        <div class="button-group">
+                            <a href="https://semrush.com" class="card-link button">SEMrush →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Templates & Open Source -->
+        <div class="section">
+            <h2 class="section-title">Templates & Open Source Projects<br><span style="font-size: 0.85em; font-weight: 400; color: #555555;">模板和开源项目</span></h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Rin Blog Template</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Dynamic blog based on Cloudflare Pages + Workers + D1 + R2<br><span style="color: var(--dark-gray); font-size: 0.95em;">基于 Cloudflare 技术栈的动态博客</span></p>
+                        <a href="https://github.com/openRin/Rin" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Next.js Boilerplate</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Next.js 15 starter with App Router and Page Router support<br><span style="color: var(--dark-gray); font-size: 0.95em;">Next.js 15 启动模板，支持 App Router 和 Page Router</span></p>
+                        <a href="https://github.com/ixartz/Next-js-Boilerplate" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">SaaS Boilerplate</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">SaaS template with Next.js + Tailwind CSS + Shadcn UI + TypeScript<br><span style="color: var(--dark-gray); font-size: 0.95em;">基于 Next.js 技术栈的 SaaS 模板</span></p>
+                        <a href="https://github.com/ixartz/SaaS-Boilerplate" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Next.js Landing Page</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Free Next.js landing page template<br><span style="color: var(--dark-gray); font-size: 0.95em;">免费的 Next.js 落地页模板</span></p>
+                        <a href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Huntscreens</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Take screenshots of each new project on Producthunt, YC, and Indiehackers<br><span style="color: var(--dark-gray); font-size: 0.95em;">自动截取 Producthunt、YC 和 Indiehackers 上的新项目截图</span></p>
+                        <a href="https://github.com/daimajia/huntscreens" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Smart Excel AI</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Generate Excel formulas using ChatGPT<br><span style="color: var(--dark-gray); font-size: 0.95em;">使用 ChatGPT 生成 Excel 公式</span></p>
+                        <a href="https://github.com/weijunext/smart-excel-ai" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Next.js VPS Example</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Next.js VPS deployment example<br><span style="color: var(--dark-gray); font-size: 0.95em;">Next.js VPS 部署示例</span></p>
+                        <a href="https://github.com/ashleyrudland/nextjs_vps" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">AI Hairstyle</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Change your hairstyle with AI<br><span style="color: var(--dark-gray); font-size: 0.95em;">使用 AI 改变发型</span></p>
+                        <a href="https://github.com/Pwntus/change-hairstyle-ai" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Green Screen Creator</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Track objects in video and add green screen effects<br><span style="color: var(--dark-gray); font-size: 0.95em;">跟踪视频中的对象并添加绿幕效果</span></p>
+                        <a href="https://github.com/replicate/green-screen-creator" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Open SaaS</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Free, open-source SaaS app starter for React & Node.js<br><span style="color: var(--dark-gray); font-size: 0.95em;">免费的 React & Node.js SaaS 应用启动器</span></p>
+                        <a href="https://github.com/wasp-lang/open-saas/" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Justship</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Svelte 5 and SvelteKit SaaS boilerplate<br><span style="color: var(--dark-gray); font-size: 0.95em;">Svelte 5 和 SvelteKit SaaS 模板</span></p>
+                        <a href="https://github.com/ocluf/justship" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Supanuxt SaaS</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Nuxt3 SaaS boilerplate with modern tech stack<br><span style="color: var(--dark-gray); font-size: 0.95em;">使用现代技术栈的 Nuxt3 SaaS 模板</span></p>
+                        <a href="https://github.com/JavascriptMick/supanuxt-saas" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">SaasFly</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Your Next SaaS Template or Boilerplate<br><span style="color: var(--dark-gray); font-size: 0.95em;">你的下一个 SaaS 模板</span></p>
+                        <a href="https://github.com/saasfly/saasfly" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Xlike Web</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">ShipFast - TypeScript project<br><span style="color: var(--dark-gray); font-size: 0.95em;">快速发布的 TypeScript 项目</span></p>
+                        <a href="https://github.com/mundane799699/xlike-web" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Astro Blog Template</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Astro boilerplate with responsive blog and portfolio template<br><span style="color: var(--dark-gray); font-size: 0.95em;">响应式博客和作品集的 Astro 模板</span></p>
+                        <a href="https://github.com/ixartz/Astro-boilerplate" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Landing Page Template</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">A versatile landing page boilerplate<br><span style="color: var(--dark-gray); font-size: 0.95em;">通用的落地页模板</span></p>
+                        <a href="https://github.com/weijunext/landing-page-boilerplate" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Viggle AI WebUI</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Open source Viggle AI web client<br><span style="color: var(--dark-gray); font-size: 0.95em;">开源的 Viggle AI 网页客户端</span></p>
+                        <a href="https://github.com/ai-aigc-studio/Viggle-AI-WebUI" class="card-link">View Project 查看项目 →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header templates">
+                        <h3 class="card-title">Weekly Blog</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Personal weekly blog template<br><span style="color: var(--dark-gray); font-size: 0.95em;">个人周刊博客模板</span></p>
+                        <div class="button-group">
+                            <a href="https://github.com/weijunext/new-blog" class="card-link">New Blog 查看项目 →</a>
+                            <a href="https://github.com/weijunext/gapis.money" class="card-link">Gapis Money 查看项目 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Web Design Resources Hub | All resources carefully curated for professional web designers</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple search functionality
+            const searchInput = document.querySelector('.search-bar input');
+            const searchButton = document.querySelector('.search-bar button');
+            const cards = document.querySelectorAll('.card');
+            
+            const performSearch = () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    const description = card.querySelector('.card-description').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
+            
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
